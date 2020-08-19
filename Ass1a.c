@@ -1,19 +1,15 @@
 #include <pthread.h>
-
 #include <stdio.h>
-
 #include <stdlib.h>
 
 pthread_mutex_t mutex;
 
 int fib[10]; 
-
 int in = 0;
 
 void *genFibo(void *param); 
 
 int main(int argc, char *argv[])
-
 {
 
    pthread_attr_t attr;  
@@ -58,11 +54,9 @@ int main(int argc, char *argv[])
    printf("\n");
 
    pthread_mutex_destroy(&mutex);
-
 }
 
 void *genFibo(void *param)
-
 {
 
    pthread_mutex_lock(&mutex);
@@ -71,19 +65,14 @@ void *genFibo(void *param)
    pthread_mutex_unlock(&mutex);
 
    pthread_exit(0);
-
 }
 
 int fibonacci (int x)
-
 {
-
    if (x <= 1) {
 
    return 1;
-
    }
 
    return fibonacci(x-1) + fibonacci(x-2);
-
 }
